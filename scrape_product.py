@@ -2,6 +2,8 @@
 
 import json
 import asyncio
+import re
+import uuid
 from typing import Dict
 
 from scrapfly import ScrapeApiResponse, ScrapeConfig
@@ -28,14 +30,14 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         "link": result.context["url"],
         "media": selector.xpath("//div[contains(@class,'slider--img')]/img/@src").getall(),
         "rate": len(rate) if rate else None,
-        "reviews": int(reviews.replace(" Reviews", "")) if reviews else None,
+        "reviews": int(re.sub(r"[^\d]", "", reviews)) if reviews else None,
         "soldCount": (
-            int(sold_count.replace(" sold", "").replace(",", "").replace("+", ""))
-            if sold_count
+            int(re.sub(r"[^\d]", "", sold_count))
+            if sold_count and re.search(r"\d", sold_count)
             else 0
         ),
         "availableCount": (
-            int(available_count.replace(" available", "")) if available_count else None
+            int(re.sub(r"[^\d]", "", available_count)) if available_count and re.search(r"\d", available_count) else None
         ),
     }
 
@@ -48,29 +50,26 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
     discount = selector.xpath(
         "//span[contains(@class,'price--discount')]/text()"
     ).get()
+    def parse_price(text):
+        """Parse price string in any locale format (e.g. 1,234.56 or 1.234,56)."""
+        if not text:
+            return None
+        # Extract the numeric part after any currency symbol
+        nums = re.sub(r"[^\d.,]", "", text.split("$")[-1].strip())
+        if not nums:
+            return None
+        # If last separator is a comma, it's the decimal (European format)
+        if "," in nums and ("." not in nums or nums.rfind(",") > nums.rfind(".")):
+            nums = nums.replace(".", "").replace(",", ".")
+        else:
+            nums = nums.replace(",", "")
+        return float(nums)
+
     pricing = {
         "priceCurrency": "USD $",
-        "price": float(price.split("$")[-1]) if price else None,
-        "originalPrice": (
-            float(original_price.split("$")[-1]) if original_price else "No discount"
-        ),
+        "price": parse_price(price),
+        "originalPrice": parse_price(original_price) if original_price else "No discount",
         "discount": discount if discount else "No discount",
-    }
-
-    shipping_cost = selector.xpath(
-        "//strong[contains(text(),'Shipping')]/text()"
-    ).get()
-    delivery = selector.xpath(
-        "//strong[contains(text(),'Delivery')]/span/text()"
-    ).get()
-    if not delivery:
-        delivery = selector.xpath(
-            "//div[contains(@class,'dynamic-shipping-contentLayout')]//span[@style]/text()"
-        ).get()
-    shipping = {
-        "cost": float(shipping_cost.split("$")[-1]) if shipping_cost else None,
-        "currency": "$",
-        "delivery": delivery,
     }
 
     specifications = []
@@ -127,7 +126,6 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         "info": info,
         "pricing": pricing,
         "specifications": specifications,
-        "shipping": shipping,
         "faqs": faqs,
         "seller": seller,
     }
@@ -159,16 +157,16 @@ async def scrape_product(url: str) -> Dict:
                 },
             ],
             proxy_pool="public_residential_pool",
-            session="some-random-session",
+            session=f"product-{uuid.uuid4().hex[:8]}",
         )
     )
     data = parse_product(result)
 
-    # Fetch up to 5 user reviews (1 page of 10, then slice)
+    # Fetch up to 10 user reviews (1 page of 10, no extra cost)
     product_id = str(data["info"]["productId"])
     try:
         review_data = await scrape_product_reviews(product_id, max_scrape_pages=1)
-        reviews_raw = review_data.get("reviews", [])[:5]
+        reviews_raw = review_data.get("reviews", [])[:10]
         data["reviews"] = [
             {
                 "user": r.get("buyerName"),
@@ -194,7 +192,7 @@ async def scrape_product(url: str) -> Dict:
 
 async def main():
     product_results = await scrape_product(
-        url="https://es.aliexpress.com/item/1005010443130857.html"
+        url="https://es.aliexpress.com/item/1005006467606496.html"
     )
 
     with open("product.json", "w", encoding="utf-8") as f:

@@ -14,7 +14,7 @@ def normalize_url(url: str) -> str:
 
 BASE_CONFIG = {
     "asp": True,
-    "country": "GB",
+    "country": "CO",
     "headers": {
         "cookie": "aep_usuc_f=site=glo&province=&city=&c_tp=USD&region=US&b_locale=en_US&ae_u_p_s=2"
     },
