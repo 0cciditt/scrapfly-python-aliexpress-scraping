@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:scrapfly.io)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
