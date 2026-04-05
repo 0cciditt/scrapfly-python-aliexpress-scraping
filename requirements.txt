@@ -1,0 +1,3 @@
+scrapfly-sdk
+python-dotenv
+parsel
