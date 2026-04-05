@@ -4,7 +4,9 @@
       "WebFetch(domain:scrapfly.io)",
       "Bash(python:*)",
       "WebFetch(domain:www.npmjs.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:articulo.mercadolibre.com.co)",
+      "WebFetch(domain:www.mercadolibre.com.co)"
     ]
   }
 }
