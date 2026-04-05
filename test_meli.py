@@ -5,7 +5,7 @@ from scrapfly import ScrapeConfig
 from config import SCRAPFLY
 
 async def main():
-    url = "https://www.mercadolibre.com.co/advance-hair-growth-fortalece-nutre-crecimiento-capilar/up/MCOU3728045762"
+    url = "https://www.mercadolibre.com.co/lamparas-tipo-spot-con-riel-de-1m-x-3-unid-de-10w-estructura-negro-luz-blanca/p/MCO42090990"
 
     result = await SCRAPFLY.async_scrape(ScrapeConfig(
         url,

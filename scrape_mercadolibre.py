@@ -82,6 +82,7 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
     stock_match = re.search(r"\+?([\d.]+)", stock_text) if stock_text else None
     available = int(stock_match.group(1).replace(".", "")) if stock_match else None
 
+    # Try multiple image sources — data-zoom has hi-res, src has standard
     images = selector.xpath(
         '//figure[contains(@class,"ui-pdp-gallery__figure")]//img/@data-zoom'
     ).getall()
@@ -89,6 +90,18 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         images = selector.xpath(
             '//figure[contains(@class,"ui-pdp-gallery__figure")]//img/@src'
         ).getall()
+    if not images:
+        images = selector.xpath(
+            '//*[contains(@class,"ui-pdp-gallery")]//img/@src'
+        ).getall()
+    # Filter out placeholder/base64 images and SVGs
+    images = [
+        img for img in images
+        if img and not img.startswith("data:") and not img.endswith(".svg")
+    ]
+    # Fallback to JSON-LD image
+    if not images and ld_json.get("image"):
+        images = [ld_json["image"]]
 
     # Rating
     rating_text = selector.xpath(
@@ -187,36 +200,54 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         "sales": seller_sales,
     }
 
-    # --- Reviews (up to 10) ---
-    reviews = []
+    # --- Reviews (up to 10, prioritize: with images+text first, then text only) ---
+    reviews_with_images = []
+    reviews_text_only = []
     review_elements = selector.xpath(
         '//*[contains(@class,"ui-review-capability-comments__comment")]'
     )
-    for r in review_elements[:10]:
-        texts = [t.strip() for t in r.xpath(".//text()").getall() if t.strip()]
+    for r in review_elements:
+        # Rating from "Calificación X de 5" text
+        rating_text = r.xpath(".//p/text()").get() or ""
+        rating_match = re.search(r"(\d+)\s*de\s*5", rating_text)
+        if not rating_match:
+            continue  # empty/lazy-loaded element, skip
 
-        # Rating: "Calificación X de 5"
-        r_rating = None
-        r_date = None
-        r_content = None
-        for t in texts:
-            rating_match = re.search(r"(\d+)\s*de\s*5", t)
-            if rating_match and r_rating is None:
-                r_rating = int(rating_match.group(1))
-            elif re.match(r"\d{2}\s\w+\s\d{4}", t) and r_date is None:
-                r_date = t
-            elif t not in ("Es útil", "Más opciones", "·") and not t.isdigit() and r_content is None and r_rating is not None:
-                r_content = t
+        # Content from dedicated __content element
+        r_content = r.xpath(
+            './/*[contains(@class,"__content")]/text()'
+        ).get()
 
+        # Review images
         review_imgs = r.xpath(".//img/@src").getall()
 
-        if r_rating is not None:
-            reviews.append({
-                "rating": r_rating,
-                "date": r_date,
-                "content": r_content,
-                "images": review_imgs,
-            })
+        # Skip reviews without text and without images
+        if not r_content and not review_imgs:
+            continue
+
+        r_rating = int(rating_match.group(1))
+
+        # Date fields: first is country, second is date
+        date_texts = r.xpath(
+            './/*[contains(@class,"__date")]/text()'
+        ).getall()
+        r_country = date_texts[0] if len(date_texts) >= 1 else None
+        r_date = date_texts[1] if len(date_texts) >= 2 else None
+
+        review = {
+            "rating": r_rating,
+            "country": r_country,
+            "date": r_date,
+            "content": r_content,
+            "images": review_imgs,
+        }
+
+        if review_imgs:
+            reviews_with_images.append(review)
+        else:
+            reviews_text_only.append(review)
+
+    reviews = (reviews_with_images + reviews_text_only)[:10]
 
     return {
         "info": info,
@@ -253,7 +284,7 @@ async def scrape_mercadolibre_product(url: str) -> Dict:
 
 async def main():
     product = await scrape_mercadolibre_product(
-        url="https://www.mercadolibre.com.co/lamparas-tipo-spot-con-riel-de-1m-x-3-unid-de-10w-estructura-negro-luz-blanca/p/MCO42090990#polycard_client=recommendations_home-deals&reco_backend=deals-model-odin&wid=MCO1505218051&reco_client=home-deals&reco_item_pos=4&reco_backend_type=low_level&reco_id=48c7a178-7c35-4d08-ad37-f7b29387c0de&sid=recos&c_id=/home/promotions-recommendations/element&c_uid=1f744282-85f7-46d3-a626-7807a61f9740"
+        url="https://www.mercadolibre.cl/creatina-monohidrato-suplemento-en-polvo-primetech-creatina-x-300g/p/MLC50362539?pdp_filters=item_id:MLC2900360970#is_advertising=true&searchVariation=MLC50362539&backend_model=search-backend&position=1&search_layout=grid&type=pad&tracking_id=d3bedc61-737e-4d7b-92c5-ba1d8657e2ba&ad_domain=VQCATCORE_LST&ad_position=1&ad_click_id=Y2E0MTMyNmUtNWRhMi00ZDZmLTg4NjItZmYyOWE2NGFlODc2"
     )
 
     with open("meli_product.json", "w", encoding="utf-8") as f:
