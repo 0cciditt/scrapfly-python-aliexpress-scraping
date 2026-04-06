@@ -1,151 +1,186 @@
 {
   "info": {
-    "name": "Creatina Monohidrato Suplemento en polvo PrimeTech Creatina x 300g",
-    "productId": "MLC50362539",
-    "link": "https://www.mercadolibre.cl/creatina-monohidrato-suplemento-en-polvo-primetech-creatina-x-300g/p/MLC50362539",
-    "condition": "Nuevo",
+    "name": "Creatina Monohidratada 1Kg Soldiers Nutrition 100% Pura Importada Alta Performance Músculo Treino",
+    "productId": "MLB18725310",
+    "link": "https://www.mercadolivre.com.br/creatina-monohidratada-1kg-soldiers-nutrition-100-pura-importada-alta-performance-musculo-treino/p/MLB18725310",
+    "condition": "Novo",
     "images": [
-      "https://http2.mlstatic.com/D_NQ_NP_2X_965158-MLA100066482395_122025-F.webp",
-      "https://http2.mlstatic.com/D_NQ_NP_2X_793592-MLA92305613066_092025-F.webp",
-      "https://http2.mlstatic.com/D_NQ_NP_2X_611195-MLA92305929700_092025-F.webp",
-      "https://http2.mlstatic.com/D_NQ_NP_2X_784762-MLA105655489342_012026-F.webp"
+      "https://http2.mlstatic.com/D_NQ_NP_2X_640712-MLA107002677903_022026-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_642234-MLA106506598795_022026-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_802012-MLA106506834921_022026-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_717175-MLA106506598813_022026-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_842456-MLA89438649299_082025-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_835179-MLA89438659301_082025-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_775646-MLA89077289622_082025-F.webp"
     ],
     "rating": 4.8,
-    "reviewCount": 49,
-    "soldCount": 500,
-    "availableCount": null
+    "reviewCount": 501281,
+    "soldCount": 0,
+    "availableCount": 50
   },
   "pricing": {
-    "currency": "CLP",
-    "price": 16190.0,
-    "originalPrice": null,
-    "discount": "30% OFF"
+    "currency": "BRL",
+    "price": 64.0,
+    "originalPrice": 239.0,
+    "discount": "72% OFF"
   },
   "specifications": [
     {
       "name": "Marca",
-      "value": "Prime Tech"
+      "value": "Soldiers Nutrition"
     },
     {
-      "name": "Línea",
+      "name": "Linha",
+      "value": "Soldiers Nutrition"
+    },
+    {
+      "name": "Suplemento principal",
       "value": "Creatina"
     },
     {
-      "name": "Nombre comercial",
-      "value": "Creatine 100% Monohydrate"
+      "name": "Nome comercial",
+      "value": "Creatina Monohidratada"
     },
     {
       "name": "Tipo de suplemento",
-      "value": "Nutricional"
+      "value": "Nutricional/Esportivo"
     },
     {
-      "name": "Peso neto",
-      "value": "300 g"
+      "name": "Formato de venda",
+      "value": "Unidade"
     },
     {
       "name": "Sabor",
-      "value": "Sin sabor"
+      "value": "Sem sabor"
     },
     {
-      "name": "Es libre de gluten",
-      "value": "Sí"
+      "name": "É livre de glúten",
+      "value": "Sim"
     },
     {
-      "name": "Es vegano",
-      "value": "Sí"
+      "name": "É vegano",
+      "value": "Não"
     },
     {
-      "name": "Edad mínima recomendada",
-      "value": "15 años"
+      "name": "É apto para as pessoas lactantes",
+      "value": "Sim"
     },
     {
-      "name": "Clase de suplemento",
+      "name": "É apto para as pessoas durante a gravidez",
+      "value": "Não"
+    },
+    {
+      "name": "É orgânico",
+      "value": "Não"
+    },
+    {
+      "name": "Idade mínima recomendada",
+      "value": "18 anos"
+    },
+    {
+      "name": "Classe de suplemento",
       "value": "Creatina"
     },
     {
-      "name": "Formato del suplemento",
-      "value": "Polvo"
+      "name": "Formato do suplemento",
+      "value": "Pó"
     },
     {
-      "name": "Tipo de envase",
-      "value": "Pote"
+      "name": "Tipo de embalagem",
+      "value": "Envelope"
     },
     {
-      "name": "Cantidad de porciones",
-      "value": "60"
+      "name": "Volume líquido",
+      "value": "1 L"
     },
     {
-      "name": "Formato de venta",
-      "value": "Unidad"
+      "name": "Volume da unidade",
+      "value": "1 L"
     },
     {
-      "name": "Unidades por envase",
-      "value": "60"
+      "name": "Quantidade de porções",
+      "value": "3"
+    },
+    {
+      "name": "Peso líquido",
+      "value": "1 kg"
+    },
+    {
+      "name": "Peso da unidade",
+      "value": "1 kg"
     },
     {
       "name": "Ingredientes",
-      "value": "100% Creatina monohidrato"
+      "value": "Creatina monohidratada"
     },
     {
-      "name": "Valores nutricionales por porción",
-      "value": "Creatina 5g"
+      "name": "Valores nutricionais por porção",
+      "value": "3000 mg creatina monohidratada"
     },
     {
-      "name": "Peso de la porción",
-      "value": "300 g"
+      "name": "Peso da porção",
+      "value": "3 g"
     },
     {
-      "name": "Contiene lactosa",
-      "value": "No"
+      "name": "Volume da porção",
+      "value": "3 mL"
+    },
+    {
+      "name": "Aminoácidos por porção",
+      "value": "Creatina 3g"
+    },
+    {
+      "name": "Contém lactose",
+      "value": "Não"
     }
   ],
-  "description": "Creatina 100% Monohidrato 300g (60 servicios)  \n¡Lleva tu rendimiento al máximo con nuestra Creatina 100% Monohidrato! Este suplemento es ideal para quienes buscan mejorar su fuerza, aumentar su masa muscular y acelerar su recuperación tras cada entrenamiento.  \nCon 300g de creatina pura y 60 servicios por envase, obtienes la dosis perfecta para potenciar tus entrenamientos diarios y optimizar tus resultados.  \n\nBeneficios:  \nIncrementa tu rendimiento en entrenamientos de alta intensidad  \nAyuda a desarrollar masa muscular y mejorar la fuerza  \nPromueve una recuperación más rápida entre sesiones  \n\nModo de uso: Toma 1 Scoop (5g) mezclado con agua o tu batido post entrenamiento.\n\nAviso legal\n• Edad mínima recomendada: 15 años.",
+  "description": "Creatina Monohidratada 1Kg - 100% Pura Importada - Soldiers Nutrition\n\nAcompanha Colher Dosadora 3g\n\nProduto aprovado por diversos laudos laboratoriais, inclusive pela ABENUTRI (Associação Brasileira de Empresas de Produtos Nutricionais)\n\nBENEFÍCIOS DA CREATINA:\n- Aumenta a capacidade do músculo de gerar força;\n- Aumento de massa magra;\n- Aumento da capacidade de treinamento;\n- Previne o catabolismo muscular;\n\nO QUE É?\nA creatina é um derivado de aminoácidos obtida através da dieta ou síntese pelo próprio organismo. Presente principalmente no músculo, auxilia na manutenção dos níveis de energia durante exercícios intensos e breves.\n\nQUANTO TOMAR/MELHOR HORÁRIO PARA CONSUMO\nO uso contínuo da creatina é recomendado para a observação de seus benefícios. Deve ser ingerida diariamente, com alguns dias até que os efeitos sejam notados.\n\n*Variação sachê e envelope disponibilizada na mesma embalagem. *\n\nA creatina depende da insulina para ser mais eficaz, sendo ideal consumi-la com alimentos ou suplementos que estimulem a produção de insulina, como carboidratos de alto índice glicêmico ou proteínas de alto índice insulinêmico.\n\nA sugestão de consumo é de 3g ao dia.\n\nNão há consenso sobre o melhor horário para consumo, com evidências apontando para benefícios tanto na refeição pré-treino quanto na pós-treino.\n\nModo de Preparo: Diluir 3g (1 colher dosadora) em 200ml de água ou bebida de preferência.\nConsumir uma porção ao dia ou conforme orientação de nutricionista ou médico.\n\nRegistro ISENTO conforme resolução RDC 27 de 06 de agosto de 2010 anexo I.\nRegistro ISENTO conforme resolução RDC 240/2018.\n\nAviso legal\n• Idade mínima recomendada: 18 anos.\n• Consumir junto com alimentos para facilitar sua assimilação.\n• Este produto é um suplemento dietético, não um medicamento. Suplementa dietas insuficientes. Consulte o seu médico e/ou farmacêutico.",
   "seller": {
-    "name": "PRIME SUPLES",
+    "name": "Loja oficial",
     "sales": null
   },
   "reviews": [
     {
       "rating": 5,
-      "country": "Chile",
-      "date": "04 abr 2026",
-      "content": "Efectos: recuperación y mucha energía.\nSabor: no tiene sabor.\nQue funciona sobre todo si vas al gym.",
+      "country": "21 set. 2023",
+      "date": null,
+      "content": "É a nossa segunda compra.\nLi alguns comentários e fiquei na dúvida de comprar novamente. Resolvi pedir e guardei um pouco da primeira que compramos para comparar, essa esta menos arenosa, mas como a primeira é sem cheiro e sem sabor. De tanto ver pessoas dizendo que era amido, provei o amido puro, ela pura e não é amido e nem tem amido ou farinha. Comprei o iodo a 2% e fiz o teste, com o restinho da primeira, com essa nova, amido e farinha de trigo. Ela passou no teste.\nGuardei no pote de vidro mas com o tempo ela vai ficando empedrada, essa nova guardei no pote de vidro, porém mantive o saquinho interno em que ela vem. Vamos ver como vai ficar.\nTomamos de várias formas, mas na água as vezes fica um pouquinho sem dissolver.\nAqui somos 2 usando uma dose de 3 gramas (metade do scoop que vem) de 5 a 6 vezes na semana (acaba que esquecemos de tomar aos domingos), e ela dura uns 3 meses aproximadamente.\nTemos notado resultado, desde que começamos a usar.\nMeu esposo, notou melhora no rendimento diário depois que passou a usar. E eu que estou em processo de emagrecimento também pude notar diferença.",
       "images": [
-        "https://http2.mlstatic.com/D_NQ_NP_2X_656183-MLA109181223448_042026-O.webp"
+        "https://http2.mlstatic.com/D_NQ_NP_2X_620394-MLA71854502505_092023-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_2X_721094-MLA71854502509_092023-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_2X_708804-MLA71801514840_092023-O.webp"
       ]
     },
     {
       "rating": 5,
-      "country": "Chile",
-      "date": "13 mar 2026",
-      "content": "👏 buenísimo.",
+      "country": "12 dez. 2023",
+      "date": null,
+      "content": "Estava com receio de comprar, mas hoje fiz o teste de iodo com amido e com creatina.\nE no mesmo comprovou que ela é puríssima. Ganhou cliente pra vida toda 💚.",
       "images": [
-        "https://http2.mlstatic.com/D_NQ_NP_2X_916729-MLA108661503859_032026-O.webp"
+        "https://http2.mlstatic.com/D_NQ_NP_2X_659504-MLA73377831271_122023-O.webp"
       ]
     },
     {
       "rating": 5,
-      "country": "Chile",
-      "date": "17 ene 2026",
-      "content": null,
+      "country": "01 mar. 2024",
+      "date": null,
+      "content": "Fiz o teste do iodo e o resultado apresentado foi esse da foto, pura! ótimo custo benefício!.",
       "images": [
-        "https://http2.mlstatic.com/D_NQ_NP_2X_880616-MLA104549429012_012026-O.webp"
+        "https://http2.mlstatic.com/D_NQ_NP_2X_636798-MLA74715536148_032024-O.webp"
       ]
     },
     {
       "rating": 5,
-      "country": "Chile",
-      "date": "06 ene 2026",
-      "content": "Disolución: fácil de mezclar.\nSabor: neutro.\nEfectivamente no tiene sabor a nada, lo que lo hace muy cómodo de tomar.",
-      "images": [
-        "https://http2.mlstatic.com/D_NQ_NP_2X_995864-MLA103881588489_012026-O.webp"
-      ]
+      "country": "23 nov. 2022",
+      "date": null,
+      "content": "Primeiro ponto, creatina é cumulativa, não compre esperando resultado imediato, ele vira com semanas de uso diário do produto. E tomar 1g a cada 10kg de peso, essa de 3g é dosagem ultrapassada.\nSegundo ponto, procurem vídeo do félix bonfim avaliando as creatinas, essa é avaliada também e tem resultado exelente, melhor custo benefício de longe!! minha segunda vez que compro e tenho ótimos resultados com ela.",
+      "images": []
     },
     {
       "rating": 5,
-      "country": "Chile",
-      "date": "20 nov 2025",
-      "content": "Buenísimo.",
+      "country": "29 dez. 2022",
+      "date": null,
+      "content": "É uma creatina real por um preço abaixo do das marcas nacionais grandes. Contanto que continuem usando 100% creatina, tá ótimo. Não esperem que dilua, creatina só dilui em água acima de 80°c. E não recomendo comprar pacotes grandes, porque começa a empedrar um pouco com o passar dos meses. Pra uso individual, o de 500g já é bem grande.",
       "images": []
     }
   ]
