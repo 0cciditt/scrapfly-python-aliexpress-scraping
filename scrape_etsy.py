@@ -137,6 +137,14 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         "variants": variant_list if variant_list else None,
     }
 
+    # --- Highlights (product features/details) ---
+    highlights = []
+    for li in selector.xpath('//*[@data-selector="product-details-highlights"]//li'):
+        texts = li.xpath('.//div[contains(@class,"wt-ml-xs-1")]//text()').getall()
+        text = " ".join(t.strip() for t in texts if t.strip())
+        if text:
+            highlights.append(text)
+
     info = {
         "name": title,
         "listingId": listing_id,
@@ -147,6 +155,7 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         "rating": rating,
         "reviewCount": review_count,
         "categories": categories,
+        "highlights": highlights,
     }
 
     # --- Reviews (up to 10, prioritize images+text, then text only) ---
@@ -237,7 +246,7 @@ async def scrape_etsy_product(url: str) -> Dict:
 
 async def main():
     product = await scrape_etsy_product(
-        url="https://www.etsy.com/es/listing/4435414273/bolsa-de-lona-bordada-personalizada?ls=r&ref=hp_opfy-1-3&pro=1&sts=1&content_source=47f9a197c31068d09d43046285af02c3%253ALTe9f13a4e5db0519700db0b6c608831dfd701f001&logging_key=47f9a197c31068d09d43046285af02c3%3ALTe9f13a4e5db0519700db0b6c608831dfd701f001"
+        url="https://www.etsy.com/es/listing/4356424401/set-de-alimentacion-de-silicona?ls=r&external=1&ref_is_trending=0&ref_is_popular=0&ref_group_id=hp_content_grouping_gqc__632239666667&ref=hp_content_grouping-5-3&pro=1&sts=1&content_source=6e2946f723e340e4e351db22f2f41586%253ALTe4cf516d4e9967557e7cde6cea31e9d8e22a53cc&logging_key=6e2946f723e340e4e351db22f2f41586%3ALTe4cf516d4e9967557e7cde6cea31e9d8e22a53cc"
     )
 
     with open("etsy_product.json", "w", encoding="utf-8") as f:

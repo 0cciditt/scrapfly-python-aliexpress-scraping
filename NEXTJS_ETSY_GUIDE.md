@@ -94,6 +94,7 @@ export interface EtsyProduct {
     rating: number | null;
     reviewCount: number | null;
     categories: string[];
+    highlights: string[];
   };
   pricing: {
     currency: string | null;
@@ -214,6 +215,13 @@ function parseProduct(
     }
   }
 
+  // --- Highlights (product features/details) ---
+  const highlights: string[] = [];
+  $('[data-selector="product-details-highlights"] li').each((_, el) => {
+    const text = $(el).find('[class*="wt-ml-xs-1"]').text().trim();
+    if (text) highlights.push(text);
+  });
+
   const info = {
     name: title,
     listingId,
@@ -224,6 +232,7 @@ function parseProduct(
     rating,
     reviewCount,
     categories,
+    highlights,
   };
 
   // --- Pricing (from JSON-LD variants) ---
@@ -497,6 +506,7 @@ Etsy is unique compared to Amazon and MercadoLibre because most product data com
 | Categories | JSON-LD `BreadcrumbList.itemListElement[]` | From a separate JSON-LD block |
 | Price | JSON-LD `hasVariant[0].offers.price` → HTML fallback | Variants are the primary source |
 | Variants | JSON-LD `hasVariant[]` | Name, price, availability per variant |
+| Highlights | HTML `[data-selector="product-details-highlights"]` | Materials, style, dimensions, tags (e.g. "Made to Order", "Recycled") |
 | Reviews | HTML selectors | CSS classes on review cards |
 
 ---
@@ -512,6 +522,7 @@ All HTML selectors used in `parseProduct()`, mapped from the Python XPath equiva
 | Shop name | `//a[contains(@href,"/shop/")]//text()` | `a[href*="/shop/"]` |
 | Shop link | `//a[contains(@href,"/shop/")]/@href` | `a[href*="/shop/"]` (`.attr("href")`) |
 | Price fallback | `//*[contains(@class,"wt-text-title-larger")]//text()` | `[class*="wt-text-title-larger"]` |
+| Highlights | `//*[@data-selector="product-details-highlights"]//li` | `[data-selector="product-details-highlights"] li` |
 | Review card | `//*[contains(@class,"review-card")]` | `[class*="review-card"]` |
 | Review rating | `.//input[@name="rating"]/@value` | `input[name="rating"]` (`.val()`) |
 | Review user | `.//*[contains(@class,"wt-text-link-no-underline")]/text()` | `[class*="wt-text-link-no-underline"]` |
