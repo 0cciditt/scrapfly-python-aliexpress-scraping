@@ -284,7 +284,7 @@ async def scrape_mercadolibre_product(url: str) -> Dict:
 
 async def main():
     product = await scrape_mercadolibre_product(
-        url="https://www.mercadolivre.com.br/creatina-monohidratada-1kg-soldiers-nutrition-100-pura-importada-alta-performance-musculo-treino/p/MLB18725310#polycard_client=search-desktop&search_layout=grid&position=5&type=product&tracking_id=133682d6-c2cf-440a-a35d-7b4806e17482&wid=MLB2766771378&sid=search"
+        url="https://www.mercadolibre.com.co/impresora-multifuncional-epson-ecotank-l3251-wi-fi-direct/p/MCO44554367#polycard_client=recommendations_home-deal-of-the-day&reco_backend=deal-of-the-day-model-odin&wid=MCO2934914568&reco_client=home-deal-of-the-day&reco_item_pos=0&reco_backend_type=low_level&reco_id=9b8cd15a-23cc-49f9-b4f6-10d897165f97&sid=recos&c_id=/home/today-promotions-recommendations/element&c_uid=f69d18e1-2781-40c9-9e25-293dcb6be54a"
     )
 
     with open("meli_product.json", "w", encoding="utf-8") as f:
