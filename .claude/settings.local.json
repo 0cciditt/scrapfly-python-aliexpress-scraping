@@ -6,7 +6,8 @@
       "WebFetch(domain:www.npmjs.com)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:articulo.mercadolibre.com.co)",
-      "WebFetch(domain:www.mercadolibre.com.co)"
+      "WebFetch(domain:www.mercadolibre.com.co)",
+      "Bash(grep -oE '<div data-pl=\"product-sku\"[^>]*>.{0,500}' aliexpress_variants.html)"
     ]
   }
 }

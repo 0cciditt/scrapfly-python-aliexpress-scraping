@@ -85,6 +85,44 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
             }
         )
 
+    # --- Variants (Color, Size, etc.) ---
+    variants = []
+    seen_variant_names = set()
+    for prop in selector.xpath("//div[contains(@class,'sku-item--property')]"):
+        title_texts = prop.xpath(
+            ".//div[contains(@class,'sku-item--title')]//text()"
+        ).getall()
+        title_raw = "".join(t.strip() for t in title_texts if t.strip()).strip()
+        # Format is "Color: TK-0000338" — split on first ":"
+        if ":" in title_raw:
+            name = title_raw.split(":", 1)[0].strip()
+        else:
+            name = title_raw or None
+
+        options = []
+        for opt in prop.xpath(".//div[@data-sku-col]"):
+            opt_classes = opt.xpath("@class").get() or ""
+            img_src = opt.xpath(".//img/@src").get()
+            img_alt = opt.xpath(".//img/@alt").get()
+            text_title = opt.xpath("@title").get()
+            text_val = opt.xpath(".//span/text()").get()
+
+            value = img_alt or text_title or text_val
+            if not value:
+                continue
+
+            options.append(
+                {
+                    "value": value,
+                    "image": img_src,
+                    "selected": "sku-item--selected" in opt_classes,
+                }
+            )
+
+        if options and name not in seen_variant_names:
+            seen_variant_names.add(name)
+            variants.append({"name": name, "options": options})
+
     faqs = []
     for i in selector.xpath("//div[@class='ask-list']/ul/li"):
         faqs.append(
@@ -125,6 +163,7 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
     return {
         "info": info,
         "pricing": pricing,
+        "variants": variants,
         "specifications": specifications,
         "faqs": faqs,
         "seller": seller,
@@ -155,6 +194,13 @@ async def scrape_product(url: str) -> Dict:
                         "ignore_if_not_visible": True,
                     }
                 },
+                {
+                    "click": {
+                        "selector": '[class*="sku--menuChange"]',
+                        "ignore_if_not_visible": True,
+                    }
+                },
+                {"wait": 2000},
             ],
             proxy_pool="public_residential_pool",
             session=f"product-{uuid.uuid4().hex[:8]}",
@@ -192,7 +238,7 @@ async def scrape_product(url: str) -> Dict:
 
 async def main():
     product_results = await scrape_product(
-        url="https://es.aliexpress.com/item/1005006467606496.html"
+        url="https://es.aliexpress.com/item/1005008028611982.html"
     )
 
     with open("product.json", "w", encoding="utf-8") as f:

@@ -1,217 +1,202 @@
 {
   "info": {
-    "name": "THUNDEROBOT-controlador de juego inalámbrico G50S, mando con efecto Hall, gatillos, frecuencia de sondeo de 1000Hz, para Switch, PC, Android e IOS",
-    "productId": 1005006467606496,
-    "link": "https://es.aliexpress.com/item/1005006467606496.html?gatewayAdapt=glo2esp",
+    "name": "Razer Mouse Purgatory Viper edición estándar 6400DPI ratón para juegos con cable mercancía de marca regalo de graduación de cumpleaños al por mayor",
+    "productId": 1005008028611982,
+    "link": "https://es.aliexpress.com/item/1005008028611982.html?gatewayAdapt=glo2esp",
     "media": [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S03f73e4fb1f7413489ebea109d92bacbY.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S03f73e4fb1f7413489ebea109d92bacbY.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sbcad11fabb1b4215bbe3d991aa0f1450Y.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sdb477fa86f384eca9dc4c54c8dad6007Z.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S0fc75492f2b44ec2a751a36c8b233da4g.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Saa862757b38b4771946cb44f4f6bcfaaI.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S08af32b6536e4db4bb02e9f84588e12fv.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S5466240ce04e4f719b672eb0d8f109254.jpg_220x220q75.jpg_.avif",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S60f87949f9604149a4b8abf7b6ae8324e.jpg_220x220q75.jpg_.avif"
+      "https://ae-pic-a1.aliexpress-media.com/kf/S60fc6050802f45e28c0a104d33eb164dw.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S732aaa9e9bda41ffbff09ddf91f26c69u.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S2e88e70380fa45a5ac6715bf3fc1ab33T.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S32e8ffa38d094f96b8bc3f02e98df2f6I.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sccd0d9a7846546c09a253ed8d2dc5c0c1.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S732aaa9e9bda41ffbff09ddf91f26c69u.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S6db09550ed2d4246aa220cc161d5f61dU.jpg_220x220q75.jpg_.avif"
     ],
     "rate": 5,
-    "reviews": 283,
+    "reviews": 68,
     "soldCount": 0,
     "availableCount": null
   },
   "pricing": {
     "priceCurrency": "USD $",
-    "price": 144.762,
-    "originalPrice": 311877.96,
+    "price": 41.214,
+    "originalPrice": 87764.16,
     "discount": "No discount"
   },
+  "variants": [
+    {
+      "name": "Color",
+      "options": [
+        {
+          "value": "Black",
+          "image": "https://ae-pic-a1.aliexpress-media.com/kf/S732aaa9e9bda41ffbff09ddf91f26c69u.jpg_220x220q75.jpg_.avif",
+          "selected": true
+        },
+        {
+          "value": "BLANCO",
+          "image": "https://ae-pic-a1.aliexpress-media.com/kf/S6db09550ed2d4246aa220cc161d5f61dU.jpg_220x220q75.jpg_.avif",
+          "selected": false
+        }
+      ]
+    }
+  ],
   "specifications": [
-    {
-      "name": "Batería incluida",
-      "value": "SÍ"
-    },
-    {
-      "name": "THUNDEROBOT Model",
-      "value": "G50S"
-    },
     {
       "name": "Producto químico de alta preocupación",
       "value": "Ninguno"
     },
     {
-      "name": "Efecto Hall",
-      "value": "SÍ"
+      "name": "Peso bruto",
+      "value": "88g"
     },
     {
-      "name": "Módulo Sensor de Joystick Marca",
-      "value": "montañas"
+      "name": "Número de rodillos",
+      "value": "1"
     },
     {
-      "name": "Tipo de Botón de Activación",
-      "value": "Hall lineal"
-    },
-    {
-      "name": "Plataforma compatible",
-      "value": "Nintendo interruptor,ordenador personal,andriod,sistema operativo iOS,vapor"
+      "name": "Orientación Manual",
+      "value": "derecho"
     },
     {
       "name": "Paquete",
       "value": "Sí"
     },
     {
+      "name": "puntos por pulgada",
+      "value": "6400"
+    },
+    {
       "name": "Tipo de interfaz",
-      "value": "USB,Bluetooth,2,4G"
+      "value": "USB"
     },
     {
-      "name": "Número de modelo",
-      "value": "G50S"
+      "name": "Batería incluida",
+      "value": "No"
     },
     {
-      "name": "Compatible Modelo de Nintendo",
-      "value": "Nintendo interruptor,Nintendo Switch OJO,Nintendo Switch Lite"
-    },
-    {
-      "name": "Marca/modelo compatible",
-      "value": "Nintendo"
+      "name": "Tipo",
+      "value": "con cable"
     },
     {
       "name": "Nombre de la marca",
-      "value": "TROMBÓT"
+      "value": "Razer"
     },
     {
       "name": "Origen",
       "value": "CN(Origen)"
     },
     {
-      "name": "Tipo",
-      "value": "Mandos de juego"
+      "name": "Número de botones",
+      "value": "5"
     }
   ],
   "faqs": [
     {
-      "question": "¿Este Control funciona para el teléfono Bluetooth?",
+      "question": "¿Es este el original?",
       "answer": null
     },
     {
-      "question": "¿Tiene una memoria USB para la computadora que no tiene Bluetooth?",
+      "question": "Es original? ",
       "answer": null
     },
     {
-      "question": "sus botones tienen switches mecánicos o de membrana?",
+      "question": "¿Es este el original?",
       "answer": null
     }
   ],
   "seller": {
-    "name": "THUNDEROBOT Choice Store",
-    "link": "es.aliexpress.com/store/1102662381",
-    "id": 1102662381,
+    "name": "Shop1103622855 Store",
+    "link": "es.aliexpress.com/store/1103622855",
+    "id": 1103622855,
     "info": {
-      "positiveFeedback": "98.0%",
-      "followers": 2650
+      "positiveFeedback": "87.1%",
+      "followers": 265
     }
   },
   "reviews": [
     {
       "user": "AliExpress Shopper",
       "country": "US",
-      "rating": 100,
-      "date": "29 Mar 2026",
-      "content": "I used it for 2 hours with the USB connector and it works very well. It's lighter than an Xbox controller, but still feels like a very good quality product for the price. It feels strange to use another controller after using an Xbox one for a long time, but you get used to it after a while. Highly recommended if you buy it for 32 dollars.",
-      "images": [
-        "https://ae01.alicdn.com/kf/Af9359ec8cf5d4667a25d558a88e2432bV.jpg",
-        "https://ae01.alicdn.com/kf/A0f54caa993904818880619243565255e2.jpg"
-      ]
+      "rating": 80,
+      "date": "25 Mar 2026",
+      "content": "Decent price.",
+      "images": []
     },
     {
-      "user": "F***z",
+      "user": "4***r",
       "country": "US",
       "rating": 100,
-      "date": "12 Apr 2025",
-      "content": "This controller feels very good, the lighting quality is quite good, just like the vibration. I have used it on my phone with Bluetooth and my switch, and it has quite a few perfect buttons to set them all up.",
-      "images": [
-        "https://ae01.alicdn.com/kf/A923eff7071634996ad119ce970b41347i.jpg",
-        "https://ae01.alicdn.com/kf/Af32dc8a0b8d8486cbf0da83775b2769aU.jpg",
-        "https://ae01.alicdn.com/kf/A6b51d3a24f1147b7acfd31d238f090a0W.jpg",
-        "https://ae01.alicdn.com/kf/Ae50fdb987d1547f9b737eb11c98f8033r.jpg"
-      ]
-    },
-    {
-      "user": "U***r",
-      "country": "US",
-      "rating": 100,
-      "date": "25 Apr 2025",
+      "date": "24 Feb 2026",
       "content": null,
+      "images": []
+    },
+    {
+      "user": "A***n",
+      "country": "US",
+      "rating": 80,
+      "date": "21 Apr 2026",
+      "content": null,
+      "images": []
+    },
+    {
+      "user": "w***o",
+      "country": "US",
+      "rating": 20,
+      "date": "14 Jan 2026",
+      "content": "I did not get my stuff and i would like a refund",
+      "images": []
+    },
+    {
+      "user": "AliExpress Shopper",
+      "country": "AU",
+      "rating": 100,
+      "date": "20 Jan 2026",
+      "content": "I looked on the real razer site and this same mouse was $360 au and this one is the razer brand and its very good.",
+      "images": []
+    },
+    {
+      "user": "A***i",
+      "country": "GB",
+      "rating": 100,
+      "date": "09 Jan 2026",
+      "content": "It's a very good mice i got it for my son he was very happy with the quality of this mouse.",
       "images": []
     },
     {
       "user": "AliExpress Shopper",
       "country": "MX",
       "rating": 100,
-      "date": "23 Oct 2025",
-      "content": "It arrived quite quickly to Mexico, the control materials feel high quality, I used it for about 2 hours and everything was perfect, it connected easily to the PC, I didn't have to configure anything.",
+      "date": "12 Apr 2026",
+      "content": "Very good mouse, great quality and excellent in every way. Obviously it's a clone, but it works more than well.",
       "images": [
-        "https://ae01.alicdn.com/kf/Ad62225e506e6458c95936f4abf11fcb0d.jpg",
-        "https://ae01.alicdn.com/kf/A0d62b8369df64835b283b7c91a237878J.jpg",
-        "https://ae01.alicdn.com/kf/Ad706a50e2f1145729c1be567ba7d434bf.jpg"
+        "https://ae-pic-a1.aliexpress-media.com/kf/A892bb57299a34206a552a92b1dc7d6556.jpg"
       ]
     },
     {
-      "user": "D***n",
-      "country": "CO",
-      "rating": 100,
-      "date": "24 Aug 2025",
-      "content": "Is this the perfect purchase? First of all, its design is honestly very beautiful, comfortable and feels of good quality (the button doesn't click if you press hard, its buttons and functions work perfectly), but of course perfection isn't about everything working correctly, there's always something that doesn't work as well as others. I don't know why, but as you can see in image 3, AVG Error is from 0. 7% in hands jostins but this only happens when connected via USB 2 chip. 4G already connected via cable or Bluetooth is at 0%, which in the end is a bit strange but they are minor issues. \n \n In conclusion, it is a very good controller for its price, would I buy it again? I would definitely buy it again, and it will be for the white color. Well, that will be for next time..... 😃 🎮",
-      "images": [
-        "https://ae01.alicdn.com/kf/A5147c92490e34a20af15d76c7a44ddc0G.jpg",
-        "https://ae01.alicdn.com/kf/A62f2b35c11074be2922b8ff103628fefh.jpg",
-        "https://ae01.alicdn.com/kf/Af2edd2a65259465da9f5c48813e0a582w.jpg"
-      ]
-    },
-    {
-      "user": "M***a",
+      "user": "J***r",
       "country": "BR",
       "rating": 100,
-      "date": "03 Aug 2025",
-      "content": "Simply amazing, its grip is very good, it has several additional buttons to use along with an assistant for R3 and L3 that stays at the top, preventing wear on the analog sticks. Very nice and has settings for button light intensity and vibration strength. \n \n I initially tested it on the cellphone and it connected easily via Bluetooth. I tried several games that I never imagined the controller would work for. Already on the computer, it worked well through the Bluetooth adapter and then I tested with the USB-C cable, the result was quite satisfactory. Excellent for the cost-benefit ratio, arrived in three days and I have nothing to complain about.",
-      "images": [
-        "https://ae01.alicdn.com/kf/Ad0026a2e84394624bd3063141af7bb0fg.jpg",
-        "https://ae01.alicdn.com/kf/A229fb48ec6df4bedb077908119e18b2cR.jpg",
-        "https://ae01.alicdn.com/kf/A7faf9665668846cf93c84e4b1e1b35bau.jpg"
-      ]
-    },
-    {
-      "user": "j***s",
-      "country": "BR",
-      "rating": 100,
-      "date": "05 Sep 2025",
-      "content": "Incredible macros and paddles, option to reset Dead Zone (back+star for 5s). Vibration and lighting control. Soft and responsive buttons. Good grip and comfortable! Highly recommended!",
-      "images": [
-        "https://ae01.alicdn.com/kf/A9f22157745934d3b89cab14c318431899.jpg",
-        "https://ae01.alicdn.com/kf/A4893e50bf42a45f29daea5d560f4d71bZ.jpg"
-      ]
-    },
-    {
-      "user": "AliExpress Shopper",
-      "country": "CO",
-      "rating": 100,
-      "date": "16 Nov 2025",
-      "content": "very good quality control, its triggers feel great and respond immediately to actions, the vibration is intense and immersive, and the adoption to any device is amazing. I haven't had it for long, but it has been very comfortable to use.",
+      "date": "21 Feb 2026",
+      "content": "I couldn't find the drive on the official website, but it works really well.",
       "images": []
     },
     {
-      "user": "a***r",
+      "user": "F***a",
       "country": "BR",
       "rating": 100,
-      "date": "14 Mar 2026",
-      "content": "It's perfect! The macros are great for fighting games, and it's very difficult to find a controller with more than 4 macro buttons. This one comes with 6 that are very easy to reach! The joysticks are super soft, and the up/down/left/right buttons have a clicky feel like a mouse, making it perfect for games that require precise movement. I loved it!",
-      "images": []
+      "date": "18 Apr 2026",
+      "content": "Similar product, identical but not original, worth the expense!",
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/A2338b3bc178442009cf591737ff8640dD.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/A5932c5bc5084473e9bc9b2d2913ab83cc.jpg"
+      ]
     },
     {
-      "user": "C***M",
-      "country": "CL",
+      "user": "C***o",
+      "country": "IT",
       "rating": 100,
-      "date": "15 Jul 2025",
-      "content": "It's a good controller, I was quite surprised by it, comfortable and good response with the USB to connect to the PC, I highly recommend it.",
+      "date": "28 Jan 2026",
+      "content": "Good seller, good goods, fast shipping",
       "images": []
     }
   ]

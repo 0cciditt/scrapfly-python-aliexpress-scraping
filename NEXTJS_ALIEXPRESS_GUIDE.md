@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide ports the Python `scrape_product.py` logic to a Next.js (App Router) API route using the Scrapfly TypeScript SDK. It covers the same features: product info, pricing, specs, seller, FAQs, and 10 user reviews with images.
+This guide ports the Python `scrape_product.py` logic to a Next.js (App Router) API route using the Scrapfly TypeScript SDK. It covers the same features: product info, pricing, variants (color / size / etc. with swatch images), specs, seller, FAQs, and 10 user reviews with images.
 
 ---
 
@@ -185,6 +185,7 @@ export interface ProductData {
     originalPrice: number | string | null;
     discount: string;
   };
+  variants: VariantData[];
   specifications: { name: string | null; value: string | null }[];
   faqs: { question: string | null; answer: string | null }[];
   seller: {
@@ -197,6 +198,17 @@ export interface ProductData {
     };
   };
   reviews: ReviewData[];
+}
+
+export interface VariantData {
+  name: string | null;        // e.g. "Color", "Tamaño", "Size"
+  options: VariantOption[];
+}
+
+export interface VariantOption {
+  value: string;              // e.g. "Red", "60x30cm", "TK-0000338"
+  image: string | null;       // variant swatch image (null for text-only variants)
+  selected: boolean;          // true for the currently-selected option
 }
 
 export interface ReviewData {
@@ -263,6 +275,54 @@ function parseProduct(
     });
   });
 
+  // --- Variants (Color, Size, etc.) ---
+  // After clicking the "Editar" button in js_scenario, the expanded variant
+  // panel is rendered. Each .sku-item--property contains one variant category
+  // (e.g. "Color", "Size"). Image-type options have <img alt="...">;
+  // text-type options have a title="..." attribute.
+  //
+  // NOTE: The DOM contains duplicate panels (collapsed preview + expanded),
+  // so we dedupe by variant name.
+  const variants: VariantData[] = [];
+  const seenVariantNames = new Set<string>();
+
+  selector('div[class*="sku-item--property"]').each((_, propEl) => {
+    // Title format: "Color: TK-0000338" — split on the first colon
+    const titleRaw = selector(propEl)
+      .find('div[class*="sku-item--title"]')
+      .text()
+      .trim();
+    const name = titleRaw.includes(":")
+      ? titleRaw.split(":")[0].trim()
+      : titleRaw || null;
+
+    const options: VariantOption[] = [];
+    selector(propEl)
+      .find("[data-sku-col]")
+      .each((_, optEl) => {
+        const $opt = selector(optEl);
+        const classes = $opt.attr("class") || "";
+        const imgSrc = $opt.find("img").attr("src") || null;
+        const imgAlt = $opt.find("img").attr("alt") || null;
+        const textTitle = $opt.attr("title") || null;
+        const textVal = $opt.find("span").first().text().trim() || null;
+
+        const value = imgAlt || textTitle || textVal;
+        if (!value) return;
+
+        options.push({
+          value,
+          image: imgSrc,
+          selected: classes.includes("sku-item--selected"),
+        });
+      });
+
+    if (options.length && name && !seenVariantNames.has(name)) {
+      seenVariantNames.add(name);
+      variants.push({ name, options });
+    }
+  });
+
   // --- FAQs ---
   const faqs: { question: string | null; answer: string | null }[] = [];
   selector("div.ask-list ul li").each((_, el) => {
@@ -289,7 +349,7 @@ function parseProduct(
     },
   };
 
-  return { info, pricing, specifications, faqs, seller };
+  return { info, pricing, variants, specifications, faqs, seller };
 }
 
 export async function scrapeProduct(rawUrl: string): Promise<ProductData> {
@@ -316,6 +376,15 @@ export async function scrapeProduct(rawUrl: string): Promise<ProductData> {
             ignore_if_not_visible: true,
           },
         },
+        {
+          // Click the "Editar" button on the SKU summary to expand the full
+          // variant selector panel (otherwise only the selected values are shown)
+          click: {
+            selector: '[class*="sku--menuChange"]',
+            ignore_if_not_visible: true,
+          },
+        },
+        { wait: 2000 },
       ],
       proxy_pool: "public_residential_pool",
       session: `product-${crypto.randomUUID().slice(0, 8)}`,
