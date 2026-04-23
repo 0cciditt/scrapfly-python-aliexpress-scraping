@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide ports the Python `scrape_amazon.py` logic to a Next.js (App Router) API route using the Scrapfly TypeScript SDK. It covers: product info, pricing, features, overview, specifications, and up to 10 user reviews (prioritized by images first, then text only). Works across all 21 Amazon country domains.
+This guide ports the Python `scrape_amazon.py` logic to a Next.js (App Router) API route using the Scrapfly TypeScript SDK. It covers: product info, pricing, variants (color / size / style / pattern with swatches and per-variant ASINs), features, overview, specifications, and up to 10 user reviews (prioritized by images first, then text only). Works across all 21 Amazon country domains.
 
 ---
 
@@ -191,10 +191,24 @@ export interface AmazonProduct {
     originalPrice: number | null;
     discount: string;
   };
+  variants: AmazonVariant[];
   features: string[];
   overview: Record<string, string>;
   specifications: { name: string; value: string }[];
   reviews: AmazonReview[];
+}
+
+export interface AmazonVariant {
+  name: string | null;         // e.g. "Color", "Size", "Style", "Pattern Name"
+  options: AmazonVariantOption[];
+}
+
+export interface AmazonVariantOption {
+  value: string;               // e.g. "Graphite", "40mm", "Bluetooth"
+  image: string | null;        // swatch image (null for text-only variants)
+  asin: string | null;         // per-variant ASIN (direct link to that variant)
+  selected: boolean;           // true for the currently-selected option
+  available: boolean;          // false if out of stock for this combo
 }
 
 export interface AmazonReview {
@@ -356,6 +370,63 @@ function parseProduct(
     }
   });
 
+  // --- Variants (Color, Size, Style, Pattern, etc.) ---
+  // Amazon uses "twister" for variants. Each dimension has a row:
+  //   #inline-twister-row-{dim}      (e.g. color_name, size_name, style_name)
+  // Inside: title text + options list. Image swatches (color) have <img alt>;
+  // text swatches (size/style) have .swatch-title-text-display.
+  // Per-variant ASIN is in the <li data-asin="..."> attribute, so you can
+  // link directly to that variant's product page.
+  const variants: AmazonVariant[] = [];
+  $('[id^="inline-twister-row-"]').each((_, row) => {
+    // Dimension title "Color:" / "Size:" — strip trailing colon
+    const titleText = $(row)
+      .find('[id^="inline-twister-dim-title-"] span[class*="a-color-secondary"]')
+      .first()
+      .text()
+      .trim();
+    const name = titleText ? titleText.replace(/:$/, "").trim() : null;
+
+    const options: AmazonVariantOption[] = [];
+    $(row).find('li[class*="inline-twister-swatch"]').each((_, li) => {
+      const $li = $(li);
+      // NOTE: cheerio normalizes attribute names to lowercase.
+      // data-initiallySelected → data-initiallyselected
+      const selected = $li.attr("data-initiallyselected") === "true";
+      const unavailable = $li.attr("data-initiallyunavailable") === "true";
+      const variantAsin = $li.attr("data-asin") || null;
+
+      // Image swatch (e.g. color) — get alt + src; upgrade thumbnail size
+      const imgAlt = $li.find("img").attr("alt") || null;
+      let imgSrc = $li.find("img").attr("src") || null;
+      if (imgSrc) {
+        imgSrc = imgSrc.replace(/\._SS\d+_/, "._SL500_");
+      }
+
+      // Text swatch (size, style, pattern)
+      const textVal = $li
+        .find('span[class*="swatch-title-text-display"]')
+        .first()
+        .text()
+        .trim();
+
+      const value = (imgAlt || textVal || "").trim();
+      if (!value) return;
+
+      options.push({
+        value,
+        image: imgSrc,
+        asin: variantAsin,
+        selected,
+        available: !unavailable,
+      });
+    });
+
+    if (options.length) {
+      variants.push({ name, options });
+    }
+  });
+
   // --- Reviews (up to 10, prioritize: images+text first, then text only) ---
   const reviewsWithImages: AmazonReview[] = [];
   const reviewsTextOnly: AmazonReview[] = [];
@@ -423,6 +494,7 @@ function parseProduct(
   return {
     info,
     pricing,
+    variants,
     features,
     overview,
     specifications,
@@ -598,6 +670,13 @@ All selectors used in `parseProduct()`, mapped from the Python XPath equivalents
 | Features | `//*[@id="feature-bullets"]//li//span[contains(@class,"a-list-item")]` | `#feature-bullets li .a-list-item` |
 | Overview | `//*[@id="productOverview_feature_div"]//tr` | `#productOverview_feature_div tr` |
 | Specs | `//table[contains(@class,"a-keyvalue")]//tr` | `table[class*="a-keyvalue"] tr` |
+| Variant row | `//*[starts-with(@id,"inline-twister-row-")]` | `[id^="inline-twister-row-"]` |
+| Variant title | `//*[starts-with(@id,"inline-twister-dim-title-")]//span[contains(@class,"a-color-secondary")]` | `[id^="inline-twister-dim-title-"] span[class*="a-color-secondary"]` |
+| Variant option | `.//li[contains(@class,"inline-twister-swatch")]` | `li[class*="inline-twister-swatch"]` |
+| Variant image | `.//img/@src` + `.//img/@alt` | `img` (`.attr("src")`, `.attr("alt")`) |
+| Variant text | `.//span[contains(@class,"swatch-title-text-display")]` | `span[class*="swatch-title-text-display"]` |
+| Variant selected | `@data-initiallyselected` | `.attr("data-initiallyselected")` (lowercased) |
+| Variant ASIN | `@data-asin` | `.attr("data-asin")` |
 | Review card | `//*[@data-hook="review"]` | `[data-hook="review"]` |
 | Review user | `.//*[contains(@class,"profile-name")]` | `[class*="profile-name"]` |
 | Review rating | `.//*[contains(@class,"review-rating")]` | `[class*="review-rating"]` |

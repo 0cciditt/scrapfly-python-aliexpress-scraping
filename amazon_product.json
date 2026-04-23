@@ -1,220 +1,246 @@
 {
   "info": {
-    "name": "Philips OneBlade 360 Auténtico Recortadora y afeitadora eléctrica para barba, 2 cuchillas 360, 3 peines para barba incipiente (1,3,5 mm), QP2724/31",
-    "asin": "B0DCFP3Z14",
-    "link": "https://www.amazon.es/dp/B0DCFP3Z14",
-    "brand": "Visita la tienda de Philips",
+    "name": "WHOOP 5.0/MG Activity Tracker - 12 Month Membership - Health and Fitness Wearable – 24/7 Activity and Sleep Tracker, Personalized Coaching, Menstrual Cycle Insights – 14+ Days Battery Life",
+    "asin": "B0DY2PB7RB",
+    "link": "https://www.amazon.com/dp/B0DY2PB7RB",
+    "brand": "WHOOP",
     "images": [
-      "https://m.media-amazon.com/images/I/81JFlflYxZL._AC_SL1500_.jpg",
-      "https://m.media-amazon.com/images/I/81OAEAgtKlL._AC_SL1500_.jpg",
-      "https://m.media-amazon.com/images/I/71po6jivcWL._AC_SL1500_.jpg",
-      "https://m.media-amazon.com/images/I/71KZTsatRHL._AC_SL1500_.jpg",
-      "https://m.media-amazon.com/images/I/711qnK7+IAL._AC_SL1500_.jpg",
-      "https://m.media-amazon.com/images/I/71+kDqZ7+uL._AC_SL1500_.jpg"
+      "https://m.media-amazon.com/images/I/71ooXQAGCkL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71HNLURif5L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61lgNLda1tL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/712rphi3RmL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/81mK-Ne5BTL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VQMv0F2lL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71DHu5D6q7L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71+umIfAeRL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RIczYfcDL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71-Bc3KaY3L._AC_SL1500_.jpg"
     ],
-    "rating": 4.0,
-    "reviewCount": 2458,
-    "availability": "En stock",
+    "rating": 4.3,
+    "reviewCount": 2983,
+    "availability": "In Stock",
     "categories": [
-      "Belleza",
-      "Afeitado y depilación",
-      "Cortapelos, barberos y afeitadoras corporales",
-      "Cortadoras de vello facial"
+      "Sports & Outdoors",
+      "Exercise & Fitness",
+      "Fitness Technology",
+      "Activity & Fitness Trackers"
     ]
   },
   "pricing": {
-    "currency": "€",
-    "price": 38.99,
-    "originalPrice": 44.99,
-    "discount": "-13 %"
+    "currency": "$",
+    "price": 359.0,
+    "originalPrice": 359.0,
+    "discount": "-17%"
   },
+  "variants": [
+    {
+      "name": "Style",
+      "options": [
+        {
+          "value": "Life",
+          "image": null,
+          "asin": "B0DY2PB7RB",
+          "selected": true,
+          "available": true
+        },
+        {
+          "value": "One",
+          "image": null,
+          "asin": "B0DY2VVZWZ",
+          "selected": false,
+          "available": true
+        },
+        {
+          "value": "Peak",
+          "image": null,
+          "asin": "B0DY2SWV16",
+          "selected": false,
+          "available": true
+        }
+      ]
+    }
+  ],
   "features": [
-    "Tecnología OneBlade: la unidad de corte de movimiento rápido (12 000 veces por minuto) es eficiente incluso con el vello más largo. El sistema de protección doble con un revestimiento deslizante y puntas redondeadas hace que el afeitado sea más fácil y cómodo",
-    "Innovadora cuchilla 360: se puede inclinar en todas las direcciones para permitir un contacto y control constantes sobre la piel, así como para recortar y afeitar fácilmente incluso las zonas más difíciles de alcanzar con menos pasadas y mayor comodidad¹",
-    "Diseñada para cortar el pelo, no la piel: recorta la barba a una longitud uniforme con nuestros 3 peines-guía para barba de dos días (1, 2, 3, 5 mm), crea bordes precisos gracias a la cuchilla de doble cara y afeita cualquier longitud de vello fácilmente",
-    "Afeitadora eléctrica 100 % resistente al agua que proporciona un arreglo personal fácil en cualquier lugar: úsala en la ducha, en seco o en húmedo; la batería de Ni-MH de 45 minutos y el mango compacto la convierten en el compañero de viaje perfecto",
-    "No se desafila fácilmente: la cuchilla de acero inoxidable dura hasta 4 meses de uso para mantener esa sensación de frescura. Aparecerá un icono de expulsión en la cuchilla cuando llegue el momento de sustituirla por una nueva",
-    "El juego incluye: 1 Philips OneBlade 360, 2 cuchillas 360, 3 peines para barba (1,3,5 mm), 1 tapa de almacenamiento, 1 funda blanda, un manual de usuario; adaptador de corriente no incluido"
+    "HSA/FSA ELIGIBLE: All 12-month WHOOP memberships and WHOOP battery packs are eligible for HSA/FSA reimbursement.",
+    "EVERYTHING YOU NEED IS INCLUDED: Your WHOOP purchase includes a 12-month WHOOP Life membership, a WHOOP MG device, a SuperKnit Luxe band, and a waterproof* Wireless PowerPack.",
+    "CONTINUOUS MONITORING: WHOOP continuously monitors your physiological data, including sleep, stress, VO2 max, blood pressure*, and heart health metrics—providing 24/7 insights to optimize fitness, recovery, and overall health.",
+    "ADVANCED INSIGHTS: WHOOP Life seamlessly integrates total-health screening into your routine",
+    "ON-DEMAND ECG READINGS: With electrocardiogram readings, Heart Screener detects potential signs of AFib to help you stay informed about your heart health.*",
+    "FIRST-OF-ITS-KIND BLOOD PRESSURE TECHNOLOGY: Get blood pressure insights*, including systolic and diastolic ranges, and learn about how blood pressure affects your well-being and performance."
   ],
   "overview": {
-    "Marca": "Philips",
-    "Usos recomendados para el producto": "Barba, Cara",
-    "Función especial": "Resistente al agua, hoja de doble movimiento, hoja de 360 grados, hoja duradera",
-    "Fuente de alimentación": "Funciona con pilas",
-    "Nombre del modelo": "Philips OneBlade",
-    "Componentes incluidos": "Batería, Cortacésped",
-    "Duración de la batería": "45 Minutos",
+    "Brand": "WHOOP",
+    "Material": "Nylon",
     "Color": "Black",
-    "Material de la cuchilla": "Acero inoxidable",
-    "Tipo de cabeza": "OneBlade"
+    "Compatible Devices": "Smartphones, Tablets",
+    "Item Weight": "4 ounces",
+    "Battery Life": "14 days",
+    "Sensor Type": "Bioimpedance, Photoplethysmography",
+    "Battery Description": "Rechargeable",
+    "EU Spare Part Availability Duration": "1 Years",
+    "UPC": "810114363300"
   },
   "specifications": [
     {
-      "name": "Marca",
-      "value": "Philips"
+      "name": "Compatible Devices",
+      "value": "Smartphones, Tablets"
     },
     {
-      "name": "Usos recomendados para producto",
-      "value": "Barba, Cara"
+      "name": "Battery Average Life",
+      "value": "14 days"
     },
     {
-      "name": "Nombre Modelo",
-      "value": "Philips OneBlade"
+      "name": "Sensor Type",
+      "value": "Bioimpedance, Photoplethysmography"
     },
     {
-      "name": "Número Modelo",
-      "value": "QP2724/31"
+      "name": "Battery Description",
+      "value": "Rechargeable"
     },
     {
-      "name": "Componentes incluidos",
-      "value": "Batería, Cortacésped"
-    },
-    {
-      "name": "Núm. de identificación comercial global",
-      "value": "08720689035958"
-    },
-    {
-      "name": "Fabricante",
-      "value": "Philips Consumer Lifestyle B.V."
-    },
-    {
-      "name": "Nombre del tipo de artículo",
-      "value": "QP2724/31 ONE BLADE HYBRID ONLINE BOX 4D"
-    },
-    {
-      "name": "País de origen",
-      "value": "Indonesia"
-    },
-    {
-      "name": "Total del paquete según la medida elegida para referenciar precio",
-      "value": "1 Conteo"
-    },
-    {
-      "name": "Clasificación en los más vendidos de Amazon",
-      "value": "nº29 en Belleza ( Ver el Top 100 en Belleza ) nº1 en Cortadoras de vello facial"
-    },
-    {
-      "name": "ASIN",
-      "value": "B0DCFP3Z14"
-    },
-    {
-      "name": "Valoración media de los clientes",
-      "value": "4,5 4,5 de 5 estrellas (2.458) var dpAcrHasRegisteredArcLinkClickAction;\n                    P.when('A', 'ready').execute(function(A) {\n                        if (dpAcrHasRegisteredArcLinkClickAction !== true) {\n                            dpAcrHasRegisteredArcLinkClickAction = true;\n                            A.declarative(\n                                'acrLink-click-metrics', 'click',\n                                { \"allowLinkDefault\": true },\n                                function (event) {\n                                    if (window.ue) {\n                                        ue.count(\"acrLinkClickCount\", (ue.count(\"acrLinkClickCount\") || 0) + 1);\n                                    }\n                                }\n                            );\n                        }\n                    }); P.when('A', 'cf').execute(function(A) {\n                A.declarative('acrStarsLink-click-metrics', 'click', { \"allowLinkDefault\" : true },  function(event){\n                    if(window.ue) {\n                        ue.count(\"acrStarsLinkWithPopoverClickCount\", (ue.count(\"acrStarsLinkWithPopoverClickCount\") || 0) + 1);\n                    }\n                });\n            }); 4,5 de 5 estrellas"
-    },
-    {
-      "name": "Característica especial",
-      "value": "Resistente al agua, hoja de doble movimiento, hoja de 360 grados, hoja duradera"
-    },
-    {
-      "name": "Fuente de alimentación",
-      "value": "Funciona con pilas"
-    },
-    {
-      "name": "Vida útil de la batería",
-      "value": "45 Minutos"
-    },
-    {
-      "name": "Tipo de cabeza",
-      "value": "OneBlade"
-    },
-    {
-      "name": "Descripción de las pilas",
-      "value": "Batería recargable Ni-MH"
-    },
-    {
-      "name": "Número de palas",
-      "value": "1"
+      "name": "Material Type",
+      "value": "Nylon"
     },
     {
       "name": "Color",
       "value": "Black"
     },
     {
-      "name": "Material de la Cuchilla",
-      "value": "Acero inoxidable"
+      "name": "EU Spare Part Availability Duration",
+      "value": "1 Years"
+    },
+    {
+      "name": "Item Weight",
+      "value": "4 ounces"
+    },
+    {
+      "name": "Brand Name",
+      "value": "WHOOP"
+    },
+    {
+      "name": "Model Number",
+      "value": "973-002-000"
+    },
+    {
+      "name": "UPC",
+      "value": "810114363300"
+    },
+    {
+      "name": "Manufacturer",
+      "value": "WHOOP"
+    },
+    {
+      "name": "Manufacturer Part Number",
+      "value": "973-002-000"
+    },
+    {
+      "name": "Team Name",
+      "value": "WHOOP"
+    },
+    {
+      "name": "Warranty Description",
+      "value": "WHOOP Lifetime Warranty"
+    },
+    {
+      "name": "Unit Count",
+      "value": "1.0 Count"
+    },
+    {
+      "name": "Included Components",
+      "value": "WHOOP Life 12-Month Membership, MG Fitness and Activity Tracker with ECG, SuperKnit Luxe Band, Wireless Waterproof PowerPack, Quick Start Guide"
+    },
+    {
+      "name": "Best Sellers Rank",
+      "value": "#171 in Sports & Outdoors ( See Top 100 in Sports & Outdoors ) #2 in Activity & Fitness Trackers"
+    },
+    {
+      "name": "ASIN",
+      "value": "B0DY2PB7RB"
+    },
+    {
+      "name": "Customer Reviews",
+      "value": "4.3 4.3 out of 5 stars (2,983) var dpAcrHasRegisteredArcLinkClickAction;\n                    P.when('A', 'ready').execute(function(A) {\n                        if (dpAcrHasRegisteredArcLinkClickAction !== true) {\n                            dpAcrHasRegisteredArcLinkClickAction = true;\n                            A.declarative(\n                                'acrLink-click-metrics', 'click',\n                                { \"allowLinkDefault\": true },\n                                function (event) {\n                                    if (window.ue) {\n                                        ue.count(\"acrLinkClickCount\", (ue.count(\"acrLinkClickCount\") || 0) + 1);\n                                    }\n                                }\n                            );\n                        }\n                    }); P.when('A', 'cf').execute(function(A) {\n                A.declarative('acrStarsLink-click-metrics', 'click', { \"allowLinkDefault\" : true },  function(event){\n                    if(window.ue) {\n                        ue.count(\"acrStarsLinkWithPopoverClickCount\", (ue.count(\"acrStarsLinkWithPopoverClickCount\") || 0) + 1);\n                    }\n                });\n            }); 4.3 out of 5 stars"
     }
   ],
   "reviews": [
     {
-      "user": "NotoriusBIG",
+      "user": "Diana",
       "rating": 5.0,
-      "title": "Top Gerät zu top preis",
-      "date": "Reseñado en Alemania el 11 de diciembre de 2025",
-      "content": "Klare Kaufempfehlung! Der Philips OneBlade hat mich ehrlich überrascht. Ich hatte schon viele Rasierer, aber keiner war so unkompliziert. Er rasiert sanft, ohne dass meine Haut danach brennt, und ich kann damit sowohl trimmen als auch komplett glattrasieren, ohne groß drüber nachzudenken. Besonders mag ich, dass er leicht in der Hand liegt und super präzise ist – selbst an schwierigen Stellen. Ich hätte nicht gedacht, dass so ein kleines Gerät meinen Morgen so viel entspannter macht. Wirklich ein Teil, das man schnell nicht mehr missen möchte Leer más",
-      "images": [
-        "https://m.media-amazon.com/images/I/812A6Y68wZL._SY88.jpg"
-      ]
-    },
-    {
-      "user": "Xavier",
-      "rating": 5.0,
-      "title": "5,0 de 5 estrellas",
-      "date": "Reseñado en España el 8 de octubre de 2025",
-      "content": "Le doy un 10 sin dudarlo. La batería dura muchísimo, aguanta varios afeitados sin necesidad de recargar, lo que la hace perfecta para llevar de viaje. La cuchilla 360 es una maravilla: se adapta a cualquier zona del cuerpo y mantiene siempre el contacto con la piel, haciendo el afeitado rápido y cómodo. Además, el sistema de protección doble evita irritaciones, incluso en las partes más sensibles. Me encanta poder usarla tanto en seco como en la ducha, y se limpia en segundos. Muy práctica, eficaz y agradable de usar de principio a fin Leer más",
+      "title": "The best fitness gadgets",
+      "date": "Reviewed in the United States on April 9, 2026",
+      "content": "The WHOOP is honestly one of the best fitness trackers I’ve used. It’s not just about steps, it really helps you understand your body on a deeper level. I also use an Apple Watch, and I’ve noticed a slight difference in step counts between the two, but it’s nothing major. The WHOOP still gives a solid sense of daily activity and complements the broader health insights. For work, it’s been super useful. I can actually see how stressful or busy days affect my energy and recovery, which helps me pace myself better and avoid feeling drained. The sleep tracking is amazing. It shows way more than just hours slept, you get details on sleep stages and recovery, so you can actually improve your sleep habits and feel more rested. It’s really comfortable to wear all the time, even while sleeping, which makes a big difference. Overall, I’d easily give it a 5/5,it just makes it easier to stay on top of your health, work, and daily routine. Read more",
       "images": []
     },
     {
-      "user": "Nerea Martinez",
+      "user": "Nicholas Terrett",
       "rating": 5.0,
-      "title": "5,0 de 5 estrellas",
-      "date": "Reseñado en España el 5 de marzo de 2026",
-      "content": "Fue un regalo para mi pareja, está encantado... No irrita la piel. Leer más",
+      "title": "Great product, blows Apple Watch stats away",
+      "date": "Reviewed in the United States on April 3, 2026",
+      "content": "Great device, very informative with the breakdowns of workouts, sleep and suggestions for workouts. App is very easy to navigate and keeps you motivated with the groups. Great battery life and can take a beating, no worries about getting it wet. Read more",
       "images": []
     },
     {
-      "user": "Nicolás",
+      "user": "Yashwanth Patel",
+      "rating": 5.0,
+      "title": "Great",
+      "date": "Reviewed in the United States on March 13, 2026",
+      "content": "Great tracking and tons of useful metricsThe Whoop 5.0 Peak has been great so far. The tracking feels accurate and consistent, and it provides a lot of detailed metrics that really help you understand your sleep, recovery, and overall performance. The insights are easy to follow and very useful if you care about health and fitness data. Overall, a great device and definitely worth it. Read more",
+      "images": []
+    },
+    {
+      "user": "Ibrahim Khan",
+      "rating": 1.0,
+      "title": "Major Heart Rate Inaccuracy During Workouts + Poor Support Experience",
+      "date": "Reviewed in the United States on March 24, 2026",
+      "content": "I wanted to share my experience with WHOOP because it’s been one of the most frustrating purchases I’ve made in a while. The core issue is simple: the heart rate data during workouts is not accurate… I tested this side-by-side with: - A Garmin chest strap (gold standard for HR) - An Apple Watch Both of those devices consistently matched each other, and I even manually checked my pulse during workouts — again, same result. Meanwhile, WHOOP was often 20+ beats per minute off during the exact same sessions. This wasn’t a one-off issue either. I tested multiple workouts: - Cross training session - Run/walk workout Same problem every time. I went through all of WHOOP’s troubleshooting steps: - Wore it exactly as instructed (above wrist bone, tight fit, no LEDs visible) - Tried bicep placement - Cleaned sensor and skin - Updated firmware/app - Restarted everything Nothing fixed it. What’s more frustrating is the support experience. Instead of addressing the issue, they repeatedly said this level of variance is “normal” due to sampling differences. That explanation doesn’t hold up when: - The other two devices are continuously measuring - They match each other AND manual pulse checks - WHOOP is the only outlier At that point, it’s not “variance” — it’s inaccurate data. And that’s the biggest problem: WHOOP’s entire value is its data and insights. If the heart rate data is wrong, then: - Strain scores are wrong - Recovery scores are unreliable - Training recommendations can’t be trusted So the whole product breaks down. I also requested a replacement after extensive troubleshooting, and they refused — continuing to ask for more photos and repeating the same steps I had already completed multiple times. To make things worse, if you buy through Amazon, returns can take 2+ months and require multiple conversations with support. That just adds another layer of frustration. Bottom line: - Hardware feels cheaper than competitors - Heart rate accuracy (at least in my case) is significantly off during workouts - Support was not helpful in resolving the issue - The product doesn’t deliver on its core promise if the data isn’t reliable I really wanted this to work because the app and concept are great. But right now, it’s hard to recommend when the most important metric — heart rate — isn’t dependable. Hopefully this improves in the future, but based on my experience, I would look elsewhere. Read more",
+      "images": []
+    },
+    {
+      "user": "Amy McLellan",
+      "rating": 5.0,
+      "title": "I love my new Whoop",
+      "date": "Reviewed in the United States on March 6, 2026",
+      "content": "My Whoop is a very comfortable and a very complete health monitor. I am very pleased with my purchase. It details my sleep quality and also gives tips on how to improve. The size does not interfere with movement. It is a bit on the expensive side, but the information can be sent to your doctor to share individual data over a period of time. I have not shared information with my doctor, yet but it is a great health fearure.  I am in a community with my friends. I am trying to improve my sleep quality and my Whoop is very helpful as I try to maximize sleep quality. I love my Whoop! Read more",
+      "images": []
+    },
+    {
+      "user": "Yohan Cenc",
+      "rating": 5.0,
+      "title": "Autonomie au top et suivi ultra personnalisé",
+      "date": "Reviewed in France on December 31, 2025",
+      "content": "Excellent abonnement 12 mois pour profiter pleinement du Whoop. L’autonomie est vraiment impressionnante : on oublie presque qu’il faut le recharger, et même pendant la charge avec le module sans fil, on ne ressent aucune gêne. Le bracelet est très confortable, il n’entrave pas les mouvements du corps, que ce soit au quotidien ou pendant le sport. L’application est bien pensée, avec une large sélection de questions et de paramètres qui permet un suivi extrêmement personnalisé. On a vraiment l’impression d’avoir un assistant qui prend en compte ce qu’on lui dit pour ajuster ses recommandations et mieux accompagner récupération, sommeil et entraînements au fil du temps Read more",
+      "images": []
+    },
+    {
+      "user": "Uğur Demirdiş",
+      "rating": 5.0,
+      "title": "Orjinal ürün",
+      "date": "Reviewed in Turkey on December 27, 2025",
+      "content": "Orjinal ürün Read more",
+      "images": []
+    },
+    {
+      "user": "Marco",
+      "rating": 5.0,
+      "title": "Für Fitness & Alltag",
+      "date": "Reviewed in Germany on December 13, 2025",
+      "content": "Absolute Empfehlung für Sport & Alltag Ich nutze das WHOOP-Armband nun seit einiger Zeit und bin wirklich begeistert. Besonders überzeugt mich, wie präzise und verständlich die Daten aufbereitet werden. Schlaf, Erholung, Belastung und Herzfrequenzvariabilität werden detailliert analysiert und helfen mir enorm dabei, mein Training smarter zu planen und Überlastung zu vermeiden. Das Armband ist sehr leicht, angenehm zu tragen und stört weder beim Sport noch im Alltag oder Schlaf. Ein großer Pluspunkt ist auch, dass es kein Display hat – dadurch wird man nicht abgelenkt und konzentriert sich mehr auf das eigene Körpergefühl. Die App ist übersichtlich, modern und liefert echte Mehrwerte, keine unnötigen Zahlen. Besonders die Erholungs- und Schlafanalysen haben mir geholfen, meine Routinen zu verbessern und leistungsfähiger zu werden. Für alle, die Sport ernst nehmen oder einfach ihren Körper besser verstehen möchten, ist WHOOP meiner Meinung nach eines der besten Tools auf dem Markt. Preis-Leistung passt absolut, da man kontinuierlich hochwertige Auswertungen erhält. Read more",
+      "images": []
+    },
+    {
+      "user": "gary",
+      "rating": 5.0,
+      "title": "Excellent - life-changer!",
+      "date": "Reviewed in the United Kingdom on April 18, 2026",
+      "content": "If I could give 10 stars I would! I bought the high spec 'Life' version and even at what I paid (£349) I think it is crazy value for money and I shall most definitely be renewing again after 12 months. It has provided invaluable data and intelligence, supporting my cardiac issues, sleep management, exercise regime, rest, recovery management eating times and so much more. The user interface and experience is very. Battery life of over a week and quick recharge means I'm never without it (with the clip-on charger you can charge it while using it at the gym etc. I thought my Apple Watch and phone were good, but this is on a totally different level. In my case it's literally a life-changer. Read more",
+      "images": []
+    },
+    {
+      "user": "パブロってぃ",
       "rating": 4.0,
-      "title": "4,0 de 5 estrellas",
-      "date": "Reseñado en España el 11 de marzo de 2026",
-      "content": "Estoy encantado con ello; es muy fácil de usar y corta rápido, dejando un acabado muy limpio. Como consejo, recomendaría que después de utilizarla en la cara se aplique algún producto (como un aftershave o crema hidratante) para evitar la irritación y dejar la piel lo mejor posible. Es muy práctica y cómoda, la recomiendo totalmente. Leer más",
-      "images": []
-    },
-    {
-      "user": "Daniel Mesa",
-      "rating": 5.0,
-      "title": "5,0 de 5 estrellas",
-      "date": "Reseñado en España el 9 de octubre de 2025",
-      "content": "Es pronto para poner una reseña pero la he probado y la Oneblade es la mejor maquinilla de afeitar que he tenido. (Que la verdad he tenido pocas y malas jajajja pero ahora explico por qué le pongo 5 estrellas). Para empezar ya me venía cargada por lo que he podido afeitarme y cuando lo he hecho ha sido otro mundo... he notado mucha suavidad, sin cortes y encima con bastante barba, que yo suelo afeitarme y luego me olvido y me tiro como 2 semanas o más sin afeitarme... Pues he visto que ha podido con mi barba y tengo una barba muy pero que muy dura y una piel muy sensible. Para que os hagais una idea, tenía que usar una cuchilla normal por cada afeitado y casi siempre acababa cortándome... Al probar esta ha sido todo lo contrario, la cuchilla parece que ni se inmuta y la suavidad con la que afeita me ha sorprendido. La cuchilla es muy fácil de poner, es como el mecanismo de un chupete y para quitarla tiene un botón con una flecha un poco complicada de retirar pero fácil. PROS: Suave al afeitar y afeita bastante bien, no rasura tanto tanto como una cuchilla pero a mí me ha dejado hasta la cara suave, sin tirones y con una barba bastante larga y dura (Como la vida misma). Venía cargada y creo que la podré cargar con una batería externa aunque de eso no estoy seguro, quizás necesite un cargador del móvil ya que solo viene el cable desde la maquinilla al usb. Trae una bolsita muy útil y un protector simple para cubrir la parte superior de la maquinilla y la cuchilla. Te puedes duchar con ella así que es resistente al agua. CONTRAS: Si tienes la barba muy larga se va acumulando en la parte de arriba de la maquinilla y tienes que ir enjuagándola para que no se acumulen tantos pelos. Cumple su función de sobra aunque solo me he afeitado una vez con ella. No sé si es que la cuchilla está alrevés pero afeita mejor de abajo a arriba, aunque si te pones a dar círculos suaves, quita la barba suavemente. ¿Podría ser que el funcionamiento del motor esté alrevés y por eso afeita mejor hacia arriba? No estoy seguro. La Caja es bien sobria, de cartón y las instrucciones dobladas y bien cutres, en el embalaje se han lucido... no da muy buena impresión al ser todo en plan para reciclar... La carga pone que es lentísima, unas 8 horas... En resumen, la primera maquinilla que puede con mi barba larguilla y dura de unas 2 semanas aprox y que no me ha hecho ni una sóla herida en la piel. Ahora tengo la carita como el culito de un bebé. Gracias Philips, Gracias Amazon. Leer más",
-      "images": []
-    },
-    {
-      "user": "Cliente Amazon",
-      "rating": 5.0,
-      "title": "5,0 de 5 estrellas",
-      "date": "Reseñado en España el 18 de marzo de 2026",
-      "content": "Siempre me habia afeitado con cuchilla desechable y recomendo el cambio a cualquiera. Si que es verdad que el acabado no es exactamente igual pero casi no se aprecia la diferencia. El único punto negativo que le veo es que los pelos salen despedidos en todas direciones y deberás limpiar la pica. Viene con una cuchilla de repuesto y 3 cabezales para diferentes tamaños (1mm, 3mm, 5mm) Leer más",
-      "images": []
-    },
-    {
-      "user": "Fran",
-      "rating": 5.0,
-      "title": "5,0 de 5 estrellas",
-      "date": "Reseñado en España el 23 de enero de 2026",
-      "content": "Espectacular, si no has probado nunca esta maquinilla lo recomiendo. Es lo más cómodo para afeitarse y no cortarse Leer más",
-      "images": []
-    },
-    {
-      "user": "Ben",
-      "rating": 5.0,
-      "title": "5,0 de 5 estrellas",
-      "date": "Reseñado en España el 1 de enero de 2026",
-      "content": "fenomenal , hubo a los 2 meses un problema de carga de batería y se envió a reparar en garantía, fue reemplazada ppr una nueva. 👌 Leer más",
-      "images": []
-    },
-    {
-      "user": "Cliente Amazon",
-      "rating": 5.0,
-      "title": "5,0 de 5 estrellas",
-      "date": "Reseñado en España el 9 de enero de 2026",
-      "content": "Potencia, corte milimétrico sin dañar la piel y muy fácil de lavar. Leer más",
-      "images": []
-    },
-    {
-      "user": "Bev And Dickie",
-      "rating": 5.0,
-      "title": "Excellent shaver 5*****",
-      "date": "Reseñado en el Reino Unido el 31 de marzo de 2026",
-      "content": "Excellent 👍. Could be happier. Close shave, powerful motor, good accessories perfect. Leer más",
+      "title": "柔術のスパーリング用に最適",
+      "date": "Reviewed in Japan on February 11, 2026",
+      "content": "これまでoura ringを使って満足していましたが、指輪という性質上柔術のスパーリング中につけることができないため、こちらを購入しました。英語しかないため、少しわかりづらいですが、電池の持ちも1週間は問題なく持ち概ね満足です。日本語対応に期待したいです。 Read more",
       "images": []
     }
   ]

@@ -174,6 +174,56 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         if th and td:
             specifications.append({"name": th.strip(), "value": td})
 
+    # --- Variants (Color, Size, Style, Pattern, etc.) ---
+    # Amazon uses "twister" for variants. Each dimension has a row:
+    #   #inline-twister-row-{dim}      (e.g. color_name, size_name, style_name)
+    # Inside: title text, options list. Options can be image swatches
+    # (color) or text swatches (size).
+    variants = []
+    for row in selector.xpath('//*[starts-with(@id,"inline-twister-row-")]'):
+        # Dimension title — e.g. "Color:" → "Color"
+        title_text = row.xpath(
+            './/*[starts-with(@id,"inline-twister-dim-title-")]'
+            '//span[contains(@class,"a-color-secondary")]/text()'
+        ).get()
+        name = None
+        if title_text:
+            name = title_text.strip().rstrip(":").strip() or None
+
+        options = []
+        for li in row.xpath('.//li[contains(@class,"inline-twister-swatch")]'):
+            selected = li.xpath("@data-initiallyselected").get() == "true"
+            unavailable = li.xpath("@data-initiallyunavailable").get() == "true"
+            variant_asin = li.xpath("@data-asin").get()
+
+            # Image swatch (color) — get alt + src; upgrade thumbnail size
+            img_alt = li.xpath(".//img/@alt").get()
+            img_src = li.xpath(".//img/@src").get()
+            if img_src:
+                img_src = re.sub(r"\._SS\d+_", "._SL500_", img_src)
+
+            # Text swatch (size, style, pattern)
+            text_val = li.xpath(
+                './/span[contains(@class,"swatch-title-text-display")]/text()'
+            ).get()
+
+            value = (img_alt or text_val or "").strip()
+            if not value:
+                continue
+
+            options.append(
+                {
+                    "value": value,
+                    "image": img_src,
+                    "asin": variant_asin,
+                    "selected": selected,
+                    "available": not unavailable,
+                }
+            )
+
+        if options:
+            variants.append({"name": name, "options": options})
+
     info = {
         "name": title,
         "asin": asin,
@@ -243,6 +293,7 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
     return {
         "info": info,
         "pricing": pricing,
+        "variants": variants,
         "features": features,
         "overview": overview,
         "specifications": specifications,
@@ -273,7 +324,7 @@ async def scrape_amazon_product(url: str) -> Dict:
 
 async def main():
     product = await scrape_amazon_product(
-        url="https://www.amazon.es/Recortadora-afeitadora-incipiente-QP2724-31/dp/B0DCFP3Z14/?_encoding=UTF8&pd_rd_w=Zq476&content-id=amzn1.sym.0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_p=0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_r=XHXZD920PMBJD724FSXZ&pd_rd_wg=HOgg9&pd_rd_r=56b4250f-de88-419f-840e-d6208b42c017&ref_=pd_hp_d_atf_unk&th=1"
+        url="https://www.amazon.com/-/es/gp/product/B0DY2PB7RB/ref=ox_sc_saved_image_10?smid=A95DP87XYU2J1&th=1"
     )
 
     with open("amazon_product.json", "w", encoding="utf-8") as f:
