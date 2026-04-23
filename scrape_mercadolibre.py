@@ -169,6 +169,67 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
         if name:
             specifications.append({"name": name.strip(), "value": (value or "").strip()})
 
+    # --- Variants (Color, Capacity, RAM, Size, etc.) ---
+    # MercadoLibre uses "outside_variations__picker" per dimension:
+    #   <div class="ui-pdp-outside_variations__picker" data-testid="PICKER-COLOR">
+    #     <p class="...__title">
+    #       <span class="...__title__label">Color:</span>
+    #       <span class="...__title__value">Graphite gray</span>
+    #     </p>
+    #     <div class="...__items">
+    #       <a class="...__item ...__item--SELECTED" href="..."> ... </a>
+    #       <a class="...__item ...__item--DISABLED" href="..."> ... </a>
+    #     </div>
+    #   </div>
+    # Image options have <img alt=... src=...>; text options have a <p>/<span>.
+    variants = []
+    for picker in selector.xpath(
+        '//div[contains(@class,"ui-pdp-outside_variations__picker")]'
+    ):
+        label_text = picker.xpath(
+            './/span[contains(@class,"ui-pdp-outside_variations__title__label")]'
+            '//text()'
+        ).get()
+        name = None
+        if label_text:
+            name = label_text.strip().rstrip(":").strip() or None
+
+        options = []
+        for item in picker.xpath(
+            './/a[contains(@class,"ui-pdp-outside_variations__thumbnails__item")]'
+        ):
+            item_classes = item.xpath("@class").get() or ""
+            selected = "--SELECTED" in item_classes
+            available = "--DISABLED" not in item_classes or selected
+            href = item.xpath("@href").get()
+            variant_url = href.split("?")[0] if href else None
+
+            # Image swatch
+            img_alt = item.xpath(".//img/@alt").get()
+            img_src = item.xpath(".//img/@src").get()
+
+            # Text swatch
+            text_val = item.xpath(
+                './/p[contains(@class,"__thumbnails__item__label")]//span/text()'
+            ).get()
+
+            value = (img_alt or text_val or "").strip()
+            if not value:
+                continue
+
+            options.append(
+                {
+                    "value": value,
+                    "image": img_src,
+                    "url": variant_url,
+                    "selected": selected,
+                    "available": available,
+                }
+            )
+
+        if options:
+            variants.append({"name": name, "options": options})
+
     # --- Description ---
     desc_parts = selector.xpath(
         '//*[contains(@class,"ui-pdp-description__content")]//text()'
@@ -252,6 +313,7 @@ def parse_product(result: ScrapeApiResponse) -> Dict:
     return {
         "info": info,
         "pricing": pricing,
+        "variants": variants,
         "specifications": specifications,
         "description": description,
         "seller": seller,
@@ -284,7 +346,7 @@ async def scrape_mercadolibre_product(url: str) -> Dict:
 
 async def main():
     product = await scrape_mercadolibre_product(
-        url="https://www.mercadolibre.com.co/impresora-multifuncional-epson-ecotank-l3251-wi-fi-direct/p/MCO44554367#polycard_client=recommendations_home-deal-of-the-day&reco_backend=deal-of-the-day-model-odin&wid=MCO2934914568&reco_client=home-deal-of-the-day&reco_item_pos=0&reco_backend_type=low_level&reco_id=9b8cd15a-23cc-49f9-b4f6-10d897165f97&sid=recos&c_id=/home/today-promotions-recommendations/element&c_uid=f69d18e1-2781-40c9-9e25-293dcb6be54a"
+        url="https://www.mercadolibre.com.co/xiaomi-redmi-pad-pro-256gb-graphite-gray-8gb-ram/p/MCO53804038"
     )
 
     with open("meli_product.json", "w", encoding="utf-8") as f:

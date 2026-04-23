@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide ports the Python `scrape_mercadolibre.py` logic to a Next.js (App Router) API route using the Scrapfly TypeScript SDK. It covers: product info, pricing, specifications, description, seller, and up to 10 user reviews (prioritized by images first, then text only). Works across all 18 MercadoLibre country sites.
+This guide ports the Python `scrape_mercadolibre.py` logic to a Next.js (App Router) API route using the Scrapfly TypeScript SDK. It covers: product info, pricing, variants (color/capacity/RAM/size/etc.), specifications, description, seller, and up to 10 user reviews (prioritized by images first, then text only). Works across all 18 MercadoLibre country sites.
 
 ---
 
@@ -154,6 +154,7 @@ export interface MercadoLibreProduct {
     originalPrice: number | null;
     discount: string;
   };
+  variants: MercadoLibreVariant[];
   specifications: { name: string; value: string }[];
   description: string | null;
   seller: {
@@ -161,6 +162,19 @@ export interface MercadoLibreProduct {
     sales: number | null;
   };
   reviews: MercadoLibreReview[];
+}
+
+export interface MercadoLibreVariant {
+  name: string | null;          // e.g. "Color", "Capacidad", "Memoria RAM"
+  options: MercadoLibreVariantOption[];
+}
+
+export interface MercadoLibreVariantOption {
+  value: string;                 // e.g. "Graphite gray", "256 GB"
+  image: string | null;          // swatch image URL (null for text-only variants)
+  url: string | null;            // relative URL to the variant's product page
+  selected: boolean;             // true if this is the currently-viewed option
+  available: boolean;            // true if the option is in stock / not disabled
 }
 
 export interface MercadoLibreReview {
@@ -187,6 +201,8 @@ import {
   parseMeliPrice,
   MercadoLibreProduct,
   MercadoLibreReview,
+  MercadoLibreVariant,
+  MercadoLibreVariantOption,
 } from "./mercadolibre";
 
 // Python XPath selectors converted to CSS equivalents:
@@ -324,6 +340,73 @@ function parseProduct(
     }
   });
 
+  // --- Variants (Color, Capacity, RAM, Size, etc.) ---
+  // MercadoLibre renders each variant dimension as an "outside_variations__picker":
+  //   <div class="ui-pdp-outside_variations__picker" data-testid="PICKER-COLOR">
+  //     <p class="...__title">
+  //       <span class="...__title__label">Color:</span>
+  //       <span class="...__title__value">Graphite gray</span>
+  //     </p>
+  //     <div class="...__items">
+  //       <a class="...__item ...__item--SELECTED" href="..."> <img alt=... src=...> </a>
+  //       <a class="...__item ...__item--DISABLED" href="..."> ... </a>
+  //     </div>
+  //   </div>
+  // Image options have <img alt=... src=...>; text options have a <p>/<span>.
+  // Modifier classes: "--SELECTED" marks the current option; "--DISABLED" marks
+  // options that require navigating to a different listing.
+  const variants: MercadoLibreVariant[] = [];
+  $('div[class*="ui-pdp-outside_variations__picker"]').each((_, picker) => {
+    const $picker = $(picker);
+
+    const labelText = $picker
+      .find('span[class*="ui-pdp-outside_variations__title__label"]')
+      .first()
+      .text();
+    const name = labelText ? labelText.trim().replace(/:$/, "").trim() || null : null;
+
+    const options: MercadoLibreVariantOption[] = [];
+    $picker
+      .find('a[class*="ui-pdp-outside_variations__thumbnails__item"]')
+      .each((_, item) => {
+        const $item = $(item);
+        const classes = $item.attr("class") ?? "";
+        const selected = classes.includes("--SELECTED");
+        // A disabled option means the user must navigate elsewhere to pick it,
+        // but the selected option itself is never "disabled" even if marked so.
+        const available = !classes.includes("--DISABLED") || selected;
+
+        const href = $item.attr("href") ?? null;
+        const variantUrl = href ? href.split("?")[0] : null;
+
+        // Image swatch (color variants)
+        const imgAlt = $item.find("img").first().attr("alt") ?? null;
+        const imgSrc = $item.find("img").first().attr("src") ?? null;
+
+        // Text swatch (size/capacity/RAM)
+        const textVal = $item
+          .find('p[class*="__thumbnails__item__label"] span')
+          .first()
+          .text()
+          .trim();
+
+        const value = (imgAlt || textVal || "").trim();
+        if (!value) return;
+
+        options.push({
+          value,
+          image: imgSrc,
+          url: variantUrl,
+          selected,
+          available,
+        });
+      });
+
+    if (options.length) {
+      variants.push({ name, options });
+    }
+  });
+
   // --- Description ---
   const descParts: string[] = [];
   $('[class*="ui-pdp-description__content"]')
@@ -432,6 +515,7 @@ function parseProduct(
   return {
     info,
     pricing,
+    variants,
     specifications,
     description,
     seller,
@@ -587,6 +671,11 @@ your-nextjs-app/
 **Reviews are empty?**
 - Many review elements are lazy-loaded (empty HTML shells). The parser skips these automatically by checking for the rating pattern `(\d+) de 5`.
 - Reviews without text AND images are filtered out by design.
+
+**Variants array is empty?**
+- Not all MercadoLibre listings have variants — the array will be `[]` for simple products.
+- If the product clearly has variants but the array is empty, inspect the page: MeLi sometimes renders variants inline on the product page (`ui-pdp-variations__picker`) instead of the "outside" picker. In that case switch the selector from `ui-pdp-outside_variations__picker` to `ui-pdp-variations__picker`.
+- Disabled options (options that redirect to a different listing) are still captured — they just have `available: false` and a different `url`.
 
 **Images array is empty?**
 - The scraper tries 3 sources in order: `data-zoom` attr → `src` attr → generic gallery `src`.
